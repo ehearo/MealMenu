@@ -1,0 +1,68 @@
+﻿@using MealSystem.Models;
+@{
+    ViewData["Title"] = "Home Page";
+}
+@{
+    List<MealData> mealDatas = ViewBag.mealDatas;
+}
+<div style="float: right; cursor: pointer;">
+        <span class="glyphicon glyphicon-shopping-cart my-cart-icon"><span class="badge badge-notify my-cart-badge"></span></span>
+      </div>
+<div class="card-group">
+@foreach (MealData mealData in mealDatas)
+{                  
+    <div class="card-card-deck">
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" style="width: 18rem; height: 18rem;"  src="@mealData.MealUrl" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">@mealData.MealName</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <button class="btn btn-danger my-cart-btn" data-id="@mealData.Id" data-name="@mealData.MealName" data-summary="summary 2" data-price="@mealData.MealPrice" data-quantity="1" >加入購物車</button>
+  </div>
+</div>
+</div>
+}
+</div>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>項目</th>
+            <th>名稱</th>
+            <th>價格</th>
+            <th>數量</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (MealData mealData in mealDatas) {
+            <tr>
+                <th>@mealData.Id</th>
+                <th>@mealData.MealName</th>
+                <th>@mealData.MealPrice</th>
+            </tr>
+         }
+    </tbody>
+</table>

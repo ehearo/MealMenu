@@ -1,0 +1,34 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+h1 {
+    text-align: center;
+}
+
+.badge-notify {
+    background: red;
+    position: relative;
+    top: -20px;
+    right: 10px;
+}
+
+.my-cart-icon-affix {
+    position: fixed;
+    z-index: 999;
+}
+
